@@ -21,7 +21,7 @@ html
                 .doneWrapper
                     each todo in done
                         p.todo(class="done") #[i(class="fas fa-check grey")]#{todo}#[span: i#deleteDone(class="fas fa-trash")]
-            a#mobileLogout(href="/logout") Log out
+            a#mobileLogout(href="/logout") #{username} - Log out
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
     script.
         var open = !{JSON.stringify(open)}
