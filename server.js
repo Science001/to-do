@@ -53,7 +53,7 @@ app.get('/login', (req, res) => {
     if(req.session && req.session.auth && req.session.auth.id) {
         res.redirect(baseURL)
     }
-    else res.render('auth', {type: 'login'})
+    else res.render('auth', {type: 'login', baseURL: baseURL})
 })
 
 app.post('/login', (req, res) => {
@@ -91,7 +91,7 @@ app.get('/signup', (req, res) => {
     if(req.session && req.session.auth && req.session.auth.id) {
         res.redirect(baseURL);
     }
-    else res.render('auth', {type: 'signup'})
+    else res.render('auth', {type: 'signup', baseURL: baseURL})
 })
 
 app.post('/signup', (req, res) => {
