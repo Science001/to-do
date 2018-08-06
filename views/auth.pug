@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        title= type=='signup' ? 'Sign Up':'Login'
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet" href="/css/main.css")
+        link(href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Pacifico")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Sans+Pro")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous")
+    body
+        .authContainer
+            h1#logo(align="center") To-do
+            #authPanel
+                h1 You, Who?
+                p.subtitle
+                .authWrapper
+                    input.field(type="text", name="username", placeholder="Username")
+                    input.field(type="password", name="password" placeholder="Password")
+                    if type=='signup'
+                        input.field(type="password", name="cnfpassword" placeholder="Confirm Password")
+                a#authBtn #{type=='signup' ? 'Sign Up':'Login'}
+                #loader
+                i#check(class="fas fa-check big green")
+                if type=='signup'
+                    p#authRedirect Have an account, already? #[a(href="/login") Login!]
+                else
+                    p#authRedirect Don't have an account? #[a(href="/signup") Sign Up!]
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script.
+            var type = '#{type}'
+            var baseURL = "http://localhost:3000"
+        script(src="/js/auth.js")

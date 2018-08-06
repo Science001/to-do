@@ -1,0 +1,273 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    #mainPanel, .mainContainer {
+        width: 100% !important;
+    }
+    #logout {
+        display: none !important;
+    }
+    #mobileLogout {
+        display: block !important;
+    }
+    #deleteDone {
+        display: inline !important;
+    }
+    #authPanel {
+        width: 100% !important;
+    }
+    .authWrapper {
+        width: 90% !important;
+    }
+}
+
+.authContainer {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+}
+
+#loader {
+    display: none;
+    border: 6px solid lightgrey;
+    border-top: 6px solid #3d3afa;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 1s linear infinite;
+}
+
+#check {
+    display: none;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+a#logout, a#logout:visited, a#logout:active {
+    position: fixed;
+    text-decoration: none;
+    display: block;
+    color: grey;
+    border-radius: 5px;
+    padding: 10px 30px;
+    top: 10px;
+    right: 10px;
+}
+
+a#logout:hover {
+    color: red;
+    border: 1px solid red;
+}
+
+a#mobileLogout, a#mobileLogout:visited, a#mobileLogout:active {
+    display: none;
+    box-sizing: border-box;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: red;
+    line-height: 3em;
+    border: none;
+    box-shadow: 0 -1px 15px;
+}
+
+.mainContainer {
+    margin: auto;
+    width: 500px;
+}
+
+h1#logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 72px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#authPanel, #mainPanel {
+    width: 500px;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0 0 15px #c4bebe;
+    margin-bottom: 60px;
+}
+
+#authPanel {
+    padding: 25px;
+    text-align: center;
+}
+
+#authPanel h1 {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+}
+
+#authPanel .subtitle {
+    color: grey;
+    font-weight: 500;
+}
+
+.authWrapper {
+    display: none;
+    margin: 30px auto;
+    width: 375px;
+}
+
+.field {
+    display: block;
+    box-sizing: border-box;
+    height: 2.5em;
+    padding: 0px 12px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-family: "Source sans pro", sans-serif;
+}
+
+
+.field:focus {
+    border: 2px solid #3d3afa;
+    outline: #3d3afa;
+}
+
+#authBtn {
+    display: inline-block;
+    width: 100px;
+    padding: 10px 0px;
+    font-size: 18px;
+    background-color: #3d3afa;
+    border-radius: 3px;
+    transition: box-shadow 0.5s;
+    border: 0;
+    color: white;
+    margin: 0;
+}
+
+#authBtn:hover {
+    box-shadow: 0 0 20px #e4335f;
+}
+
+p#authRedirect {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+p#authRedirect a, p#authRedirect a:active, p#authRedirect a:visited {
+    text-decoration: none;
+    color: blue;
+}
+
+/* Main */
+
+#mainPanel {
+    border-radius: 30px;
+}
+
+p.todo i {
+    margin-right: 15px;
+    position: relative;
+    top: 2px;
+    font-size: 22px;
+}
+
+p.todo, #addTodo {
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 3em;
+    padding: 0 20px 0 30px;
+    margin: 0;
+    transition: box-shadow 0.5s;
+    vertical-align: middle;
+}
+
+p.todo {
+    height: 100%;
+}
+
+#addTodo {
+    height: 3em;
+    font-family: "Ubuntu", sans-serif;
+    outline: none;
+    width: 100%;
+    border: none;
+    margin-top: 5px;
+    border-radius: 30px 30px 30px 30px;
+}
+
+p.todo:hover {
+    box-shadow: 0 0 4px #b9b4b4;
+}
+
+p.todo.done {
+    text-decoration: line-through;
+    color: grey;
+}
+
+#mainPanel hr {
+    border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+  margin: 10px 0 10px;
+}
+
+.openWrapper p:first-child {
+    border-radius: 30px 30px 0 0;
+}
+
+.doneWrapper p:last-child {
+    border-radius: 0 0 30px 30px;
+}
+
+#deleteDone {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 50px;
+    border-radius: 25px;
+    float: right;
+    display: none;
+}
+
+#deleteDone:hover {
+    color: red;
+    box-shadow: 0 0 10px #b9b4b4 inset;
+}
+
+.big {
+    font-size: 26px;
+}
+
+.green {
+    color: #11b80b;
+}
+
+.orange {
+    color: #ee8b0a;
+}
+
+.grey {
+    color: grey;
+}

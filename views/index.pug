@@ -1,0 +1,30 @@
+doctype html
+html
+    head
+        title To-do
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/main.css")
+        link(href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Pacifico")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Source+Sans+Pro")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous")
+    body
+        .mainContainer
+            a#logout(href="/logout") #{username}
+            h1#logo(align="center") To-do
+            #mainPanel
+                .openWrapper
+                    each todo in open
+                        p.todo #[i(class="far fa-square")]#{todo}
+                input#addTodo(type="text", name="newTodo" placeholder="Add To-do")
+                hr
+                .doneWrapper
+                    each todo in done
+                        p.todo(class="done") #[i(class="fas fa-check grey")]#{todo}#[span: i#deleteDone(class="fas fa-trash")]
+            a#mobileLogout(href="/logout") Log out
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script.
+        var open = !{JSON.stringify(open)}
+        var done = !{JSON.stringify(done)}
+        var username = '!{username}'
+    script(src="/js/main.js")
