@@ -41,7 +41,9 @@ app.get('/', (req, res)=>{
 
 app.get('/logout', function(req,res) {
     delete req.session.auth;
-    res.redirect(baseURL+'/login')
+    setTimeout(function(){
+        res.redirect(baseURL+'/login')
+    }, 1000)
  });
 
 function hash(input, salt) {
