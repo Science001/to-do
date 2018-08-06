@@ -5,8 +5,8 @@ const app = express()
 const crypto = require('crypto')
 const session = require('express-session')
 
-const PORT = process.env.PORT || 3000
-const baseURL = process.env.BASEURL || 'http://localhost:3000'
+const PORT = process.env.PORT || 5000
+const baseURL = process.env.BASEURL || 'http://localhost:'+PORT
 
 app.set('views', './views')
 app.set('view engine', 'pug')
