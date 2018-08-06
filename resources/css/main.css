@@ -92,6 +92,7 @@ a#mobileLogout, a#mobileLogout:visited, a#mobileLogout:active {
 .mainContainer {
     margin: auto;
     width: 500px;
+    height: 100%;
 }
 
 h1#logo{
