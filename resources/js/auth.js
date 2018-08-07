@@ -9,11 +9,19 @@ function main() {
         var password = $('[name=password]').val()
         if(username.length===0) {
             $('[name=username]').css('border-color','red')
-            if(password.length===0) $('[name=password]').css('border-color','red')
+            if(password.length===0) {
+                $('[name=password]').css('border-color','red')
+                $('[name=cnfpassword]').css('border-color','red')
+            }
+            $('#loader').hide()
+            $('#authBtn').show();
             return;
         }
         if(password.length===0) {
             $('[name=password]').css('border-color','red')
+            $('[name=cnfpassword]').css('border-color','red')
+            $('#loader').hide()
+            $('#authBtn').show();
             return;
         }
         if(type=='signup') {
@@ -21,6 +29,8 @@ function main() {
             if(password.length<8) {
                 $('#authPanel h1').text('Too short!')
                 $('#authPanel .subtitle').text('Password should have a minimum of 8 characters')
+                $('#loader').hide()
+                $('#authBtn').show();
                 return;
             }
             $('#authPanel h1').text('Hah, you!')
