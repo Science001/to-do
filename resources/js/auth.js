@@ -7,8 +7,22 @@ function main() {
         var url = '/'+type
         var username = $('[name=username]').val()
         var password = $('[name=password]').val()
+        if(username.length===0) {
+            $('[name=username]').css('border-color','red')
+            if(password.length===0) $('[name=password]').css('border-color','red')
+            return;
+        }
+        if(password.length===0) {
+            $('[name=password]').css('border-color','red')
+            return;
+        }
         if(type=='signup') {
             console.log('Sign up')
+            if(password.length<8) {
+                $('#authPanel h1').text('Too short!')
+                $('#authPanel .subtitle').text('Password should have a minimum of 8 characters')
+                return;
+            }
             $('#authPanel h1').text('Hah, you!')
             $('#authPanel .subtitle').text('Signing you up')
             var cnfpassword = $('[name=cnfpassword]').val()
