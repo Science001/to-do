@@ -25,7 +25,7 @@ html
             a#mobileLogout(href="/logout") #{username} - Log out
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
     script.
-        var o = "!{(((JSON.stringify(open)).replace(';','U+0003B')).replace('<', 'U+003C')).replace('>', 'U+003E')}"
-        var d = "!{(((JSON.stringify(done)).replace(';','U+0003B')).replace('<', 'U+003C')).replace('>', 'U+003E')}"
+        var o = !{(((JSON.stringify(open)).replace(/;/g,'U+0003B')).replace(/</g, 'U+003C')).replace(/>/g, 'U+003E')}
+        var d = !{(((JSON.stringify(done)).replace(/;/g,'U+0003B')).replace(/</g, 'U+003C')).replace(/>/g, 'U+003E')}
         var username = '!{username}'
     script(src="/js/main.js")
