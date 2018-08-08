@@ -22,11 +22,11 @@ function update() {
         if(request.readyState === XMLHttpRequest.DONE) {
             if(request.status === 200) {
                 if(checked){
-                    $('.doneWrapper').prepend($("<p class=\"todo done\"></p>").html("<i class=\"fas fa-check grey\"></i>"+x+"<span><i id=\"deleteDone\" class=\"fas fa-trash\"></i></span>"))
+                    $('.doneWrapper').prepend(($("<p class=\"todo done\"></p>").text(x).prepend("<i class=\"fas fa-check grey\"></i>")).append("<span><i id=\"deleteDone\" class=\"fas fa-trash\"></i></span>"))
                     $('.openWrapper .todo').remove(".done")
                 }
                 else{
-                    $('.openWrapper').append($("<p class=\"todo\"></p>").html("<i class=\"far fa-square\"></i>"+x))
+                    $('.openWrapper').append($("<p class=\"todo\"></p>").text(x).prepend("<i class=\"far fa-square\"></i>"))
                     $('.doneWrapper .todo').remove(".fire")
                 }
             }
