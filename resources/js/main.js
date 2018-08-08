@@ -1,3 +1,6 @@
+var open = JSON.parse(o);
+var done = JSON.parse(d);
+
 function update() {
     console.log('Dayum')
 
