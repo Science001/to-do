@@ -74,7 +74,7 @@ function main() {
             request.onreadystatechange = function() {
                 if(request.readyState === XMLHttpRequest.DONE) {
                     if(request.status === 200) {
-                        $('.openWrapper').append($("<p class=\"todo\"></p>").html("<i class=\"far fa-square\"></i>"+toAdd))
+                        $('.openWrapper').append($("<p class=\"todo\"></p>").text(toAdd).prepend("<i class=\"far fa-square\"></i>"))
                     }
                 }
             }
