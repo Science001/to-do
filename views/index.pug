@@ -25,7 +25,7 @@ html
             a#mobileLogout(href="/logout") #{username} - Log out
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
     script.
-        var open = !{JSON.stringify(open)}
-        var done = !{JSON.stringify(done)}
+        var o = "!{JSON.stringify(open)}"
+        var d = "!{JSON.stringify(done)}"
         var username = '!{username}'
     script(src="/js/main.js")
